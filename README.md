@@ -1,4 +1,6 @@
 # SSM-RASPI-Ansible
+[![Ansible Role](https://img.shields.io/ansible/role/21883.svg)](https://galaxy.ansible.com/twistedgrim/ssm-raspi-ansible/)
+[![Ansible Role](https://img.shields.io/ansible/role/d/21883.svg)](https://galaxy.ansible.com/twistedgrim/ssm-raspi-ansible/)
 
 This playbook is built to install the SSM agent on a raspberry pi.
 This has been tested and works against Pi 3 / Pi 2 / Pi Zero.
