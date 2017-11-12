@@ -1,0 +1,6 @@
+---
+# vars file for ssm-raspi-ansible
+download_url: https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/debian_arm/amazon-ssm-agent.deb
+region: us-east-1
+code:
+id:

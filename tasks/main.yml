@@ -1,0 +1,29 @@
+---
+# tasks file for ssm-raspi-ansible
+
+- name: Install deb file for raspberry pi
+  become: yes
+  become_user: root
+  apt:
+    deb: "{{ download_url }}"
+
+- name: Stop ssm agent after install to register
+  become: yes
+  become_user: root
+  service:
+    name: amazon-ssm-agent
+    state: stopped
+
+- name: Register ssm agent
+  become: yes
+  become_user: root
+  command: "amazon-ssm-agent -register -code \"{{ code }}\" -id \"{{ id }}\" -region \"{{ region }}\""
+
+- name: restart ssm agent
+  become: yes
+  become_user: root
+  service:
+    name: amazon-ssm-agent
+    enabled: yes
+    state: started
+  when: ansible_os_family == 'Debian'
